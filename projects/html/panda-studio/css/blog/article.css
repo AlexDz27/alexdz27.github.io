@@ -1,0 +1,10 @@
+.body-article__hero {
+	margin-bottom: 70px;
+}
+
+.article {
+	max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
