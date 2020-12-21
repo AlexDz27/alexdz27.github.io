@@ -69,7 +69,9 @@
                   "eng" === t && (t = "en"), (document.querySelector("html").lang = t);
                 })(n),
                 this.getTranslations().forEach(function (e) {
-                  document.querySelector(e.elemId).textContent = e.languages[n];
+                  try {
+                    document.querySelector(e.elemId).textContent = e.languages[n];
+                  } catch (err) {}
                 }),
                 (this.currentLang = n));
             },
