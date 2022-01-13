@@ -1,0 +1,33 @@
+/* Scaffolding */
+@page {
+}
+
+body {
+  margin: 25mm 25mm 25mm 25mm;
+  font-size: 11pt;
+}
+
+/* Contact */
+.contact {
+  font-size: 9pt;
+}
+
+.icon {
+  height: 15px;
+  position: relative;
+  top: 2px;
+}
+
+/* Main */
+main {
+  margin-top: -20mm;
+}
+
+.skills {
+  min-width: 275px;
+}
+
+.skills > ul {
+  margin-top: -7mm;
+  padding: 25px;
+}
