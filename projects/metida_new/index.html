@@ -3,13 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>МЕТИДА-ТОРГ — семена и средства защиты</title>
+  <title>МЕТИДА-ТОРГ — овощи, фрукты, зерно и средства защиты</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <main>
-    ывапыва
-    dfhgdfl
+    <header>
+      <img class="logo" src="img/logo.png" width="280">
+      <nav class="a2">
+        <a href="#">Товары и услуги</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+      </nav>
+      <div class="tel a2">
+        <img src="img/phone-call.png" width="30">
+        +375 29 8191624
+      </div>
+    </header>
+    <div class="phrase">
+      <h1 class="first-row slide-fadein-text">Выращиваем овощи,</h1>
+      <div class="slider-container">
+        <h1 class="second-row slide-fadein-text">
+          фрукты,<br>
+          зерновые культуры
+        </h1>
+        <section class="slider">
+          <button id="arrowPrev" class="arrow-prev"><</button>
+          <div id="sliderTrack">
+            <section class="slide">
+              <b>Томат</b>
+              <img src="img/slider/pomidor.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Огурец</b>
+              <img src="img/slider/ogur.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Морковь</b>
+              <img src="img/slider/mork.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Картофель</b>
+              <img src="img/slider/kartoshka.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Лук</b>
+              <img src="img/slider/lyk.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Капуста</b>
+              <img src="img/slider/kapysta.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Свекла</b>
+              <img src="img/slider/svekla.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Яблоки</b>
+              <img src="img/slider/yabloko-1.jpg" width="175">
+            </section>
+            <section class="slide">
+              <b>Груша</b>
+              <img src="img/slider/grysha-1.jpg" width="175">
+            </section>
+          </div>
+          <button id="arrowNext" class="arrow-next">></button>
+          <span class="counter"><span id="counter">1</span>/9</span>
+        </section>
+      </div>
+    </div>
   </main>
+
+  <section class="goods-and-services">
+    <h1 class="goods-and-services-phrase">Наши товары и услуги</h1>
+    <section class="goods">
+      <div class="goods-row">
+        <div>
+          <span>Овощи</span>
+          <ul>
+            <li>Томат</li>
+            <li>Огурец</li>
+            <li>Морковь</li>
+            <li>Лук</li>
+            <li>Капуста</li>
+            <li>Свекла</li>
+          </ul>
+        </div>
+        <div>
+          <span>Фрукты</span>
+          <ul>
+            <li>Яблоки</li>
+            <li>Груша</li>
+          </ul>
+        </div>
+      </div>
+      <div class="goods-row goods-row-potato">
+        <p>Также выращиваем картофель</p>
+      </div>
+    </section>
+  </section>
 </body>
 </html>
