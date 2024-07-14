@@ -9,99 +9,160 @@
 </head>
 <body>
   <main>
-    <header>
+    <header class="container">
       <img class="logo" src="img/logo.png" width="280">
       <nav class="a2">
-        <a href="#">Товары и услуги</a>
-        <a href="#">О нас</a>
-        <a href="#">Контакты</a>
+        <a href="#goods">Наши товары</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
       </nav>
       <div class="tel a2">
-        <img src="img/phone-call.png" width="30">
+        <img src="img/icons/phone-call.png" width="30">
         +375 29 8191624
       </div>
     </header>
-    <div class="phrase">
-      <h1 class="first-row slide-fadein-text">Выращиваем овощи,</h1>
+    <div class="phrase container">
+      <h1 class="first-row slide-fadein-text">Оптовая продажа</h1>
       <div class="slider-container">
         <h1 class="second-row slide-fadein-text">
-          фрукты,<br>
-          зерновые культуры
+          семян овощных<br>
+          и полевых
         </h1>
         <section class="slider">
-          <button id="arrowPrev" class="arrow-prev"><</button>
-          <div id="sliderTrack">
-            <section class="slide">
-              <b>Томат</b>
-              <img src="img/slider/pomidor.jpg" width="175">
+          <div id="sliderTrack" class="slider-track">
+            <section class="slide slide-veg">
+              <p>Семена овощей</p>
             </section>
-            <section class="slide">
-              <b>Огурец</b>
-              <img src="img/slider/ogur.jpg" width="175">
+            <section class="slide slide-pole">
+              <p>Семена полевые</p>
             </section>
-            <section class="slide">
-              <b>Морковь</b>
-              <img src="img/slider/mork.jpg" width="175">
+            <section class="slide slide-fertilizers">
+              <p>Удобрения</p>
             </section>
-            <section class="slide">
-              <b>Картофель</b>
-              <img src="img/slider/kartoshka.jpg" width="175">
-            </section>
-            <section class="slide">
-              <b>Лук</b>
-              <img src="img/slider/lyk.jpg" width="175">
-            </section>
-            <section class="slide">
-              <b>Капуста</b>
-              <img src="img/slider/kapysta.jpg" width="175">
-            </section>
-            <section class="slide">
-              <b>Свекла</b>
-              <img src="img/slider/svekla.jpg" width="175">
-            </section>
-            <section class="slide">
-              <b>Яблоки</b>
-              <img src="img/slider/yabloko-1.jpg" width="175">
-            </section>
-            <section class="slide">
-              <b>Груша</b>
-              <img src="img/slider/grysha-1.jpg" width="175">
+            <section class="slide slide-protection">
+              <p>Защита посевов</p>
             </section>
           </div>
-          <button id="arrowNext" class="arrow-next">></button>
-          <span class="counter"><span id="counter">1</span>/9</span>
+          <div id="buttonsContainer" class="buttons-container">
+            <button data-index="0" class="slider-button button--active"></button>
+            <button data-index="1" class="slider-button"></button>
+            <button data-index="2" class="slider-button"></button>
+            <button data-index="3" id="button4" class="slider-button"></button>
+          </div>
         </section>
       </div>
     </div>
   </main>
 
-  <section class="goods-and-services">
-    <h1 class="goods-and-services-phrase">Наши товары и услуги</h1>
-    <section class="goods">
-      <div class="goods-row">
-        <div>
-          <span>Овощи</span>
-          <ul>
-            <li>Томат</li>
-            <li>Огурец</li>
-            <li>Морковь</li>
-            <li>Лук</li>
-            <li>Капуста</li>
-            <li>Свекла</li>
-          </ul>
-        </div>
-        <div>
-          <span>Фрукты</span>
-          <ul>
-            <li>Яблоки</li>
-            <li>Груша</li>
-          </ul>
-        </div>
+  <section id="goods" class="goods-and-services">
+    <h1 class="phrase section-phrase">Наши товары</h1>
+    <section class="goods container">
+      <div class="goods-item goods-item-veg">
+        <div class="goods-item-name">Семена овощные</div>
+        <ul>
+          <li>Томат</li>
+          <li>Огурец</li>
+          <li>Морковь</li>
+          <li>Лук</li>
+          <li>Капуста</li>
+          <li>Свекла</li>
+          <li>Перец</li>
+        </ul>  
+      </div> 
+      <div class="goods-item goods-item-seed">
+        <div class="goods-item-name">Семена полевые</div>
+        <ul>
+          <li>Рожь</li>
+          <li>Пшеница</li>
+          <li>Кукуруза</li>
+          <li>Подсолнечник</li>
+          <li>Рапс</li>
+          <li>Ячмень</li>
+          <li class="li-space"></li>
+        </ul>
       </div>
-      <div class="goods-row goods-row-potato">
-        <p>Также выращиваем картофель</p>
+      </div>
+      <div class="goods-item goods-item-pot">
+        <div class="goods-item-name">Семенной картофель</div>
+      </div>
+      <div class="goods-item goods-item-fert">
+        <div class="goods-item-name">Удобрения</div>
+        <ul>
+          <li>Водорастворимые</li>
+          <li>Для основного внесения</li>
+        </ul>
+        <img src="img/goods/fert-short.jpg">
+      </div>
+      <div class="goods-item goods-item-protect">
+        <div class="goods-item-name">Средства защиты</div>
+        <ul>
+          <li>Гербициды</li>
+          <li>Десиканты</li>
+          <li>Инсектициды</li>
+          <li>Протравители</li>
+          <li>Регуляторы роста</li>
+          <li>Фунгициды</li>
+        </ul> 
       </div>
     </section>
   </section>
+
+  <section id="about" class="about container about-container">
+    <section class="about-bubble">
+      <h1 class="phrase">О нас</h1>
+      <p>
+        ООО «Метида-торг» — дистрибьютор в сфере сельского хозяйства в Беларуси. Более 10 лет мы занимаемся оптовой продажей семян овощных и полевых культур и удобрений, а также средств защиты посевов.
+        <br>
+        <br>
+        Недавно мы открыли для себя новое направление: тепличные субстраты и сетки — всё для того, чтобы делать урожай белорусских хозяйств больше и лучше.
+        <br>
+        <br>
+        Наша цель — поддерживать фермеров и аграриев на каждом этапе выращивания, обеспечивая их качественными продуктами и экспертными рекомендациями.
+      </p>
+    </section>
+    <section class="about-photos">
+      <img src="img/about-photos/photo-1.webp">
+      <img src="img/about-photos/photo-2.webp">
+    </section>
+  </section>
+
+  <section class="clients">
+    <h1 class="phrase section-phrase">Наши клиенты</h1>
+    <div class="clients-track">
+      <img src="img/clients/pyat.png">
+      <img src="img/clients/magnit.png">
+      <img src="img/clients/evro.png">
+      <img src="img/clients/lenta.png">
+    </div>
+  </section>
+
+  <footer id="contacts">
+    <header class="container">
+      <img class="logo" src="img/logo.png" width="280">
+      <nav class="a2">
+        <a href="#goods">Наши товары</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="tel a2">
+        <img src="img/icons/phone-call.png" width="30">
+        +375 29 8191624
+      </div>
+    </header>
+    <div class="footer-row2 container">
+      <iframe src="https://yandex.ru/map-widget/v1/?lang=ru_RU&amp;scroll=true&amp;source=constructor-api&amp;um=constructor%3A1c6dc154f7523889b4e88e64ac64ad274601f13773bbbb4b7e9d0a9f7f302373" frameborder="0" allowfullscreen="true" width="100%" height="400px" style="display: block;"></iframe>
+      <span>
+        <b>ООО «Метида-торг»</b><br><br>
+        Республика Беларусь, 223039, Минская область, Минский район,<br>
+        Ждановичский сельский совет, район деревни Таборы,<br>
+        административно-хозяйственное здание, кабинет 57
+        <br>
+        <br>
+        <span class="mail">
+          <img src="img/icons/empty-email.png" width="30"> <span>metidatorg@gmail.com</span>
+        </span>
+      </span>
+    </div>
+  </footer>
 </body>
 </html>

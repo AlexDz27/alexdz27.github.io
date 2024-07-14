@@ -2,66 +2,49 @@
 
 // SLIDER
 const sliderTrack = document.querySelector('#sliderTrack')
-const arrowPrev = document.querySelector('#arrowPrev')
-const arrowNext = document.querySelector('#arrowNext')
-const counter = document.querySelector('#counter')
-let counterVal = 0
+const buttonsContainer = document.querySelector('#buttonsContainer')
+let prevIndex = 0
+let index = 0
 
 let t = setInterval(() => {
-  arrowNext.click()
+  if (document.visibilityState === 'hidden') return
+  prevIndex = index
+  index++
+  if (index === sliderTrack.childElementCount) index = 0
+  slide()
 }, 3000)
-console.log(t)
-arrowNext.addEventListener('click', (e) => {
-  if (e.isTrusted) {
-    clearInterval(t)
-    t = setInterval(() => {
-      arrowNext.click()
-    }, 3000)
+for (const button of buttonsContainer.children) {
+  button.addEventListener('click', (e) => {
+    if (e.isTrusted) {
+      clearInterval(t)
+      t = setInterval(() => {
+        if (document.visibilityState === 'hidden') return
+        prevIndex = index
+        index++
+        if (index === sliderTrack.childElementCount) index = 0
+        slide()
+      }, 3000)
+    }
+
+    prevIndex = index
+    index = Number(button.dataset.index)
+    slide()
+  })
+}
+
+function slide() {
+  if (index === prevIndex) return
+  for (const b of buttonsContainer.children) {
+    b.disabled = true
   }
 
-  if (counterVal === 8) counterVal = -1
+  document.querySelector('.button--active').classList.remove('button--active')
+  buttonsContainer.children[index].classList.add('button--active')
+  sliderTrack.scrollLeft += 315 * (index - prevIndex)
 
-  counterVal++
-  sliderTrack.children[counterVal].scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
-  counter.innerText = counterVal + 1
-})
-arrowPrev.addEventListener('click', (e) => {
-  if (e.isTrusted) {
-    clearInterval(t)
-    t = setInterval(() => {
-      arrowNext.click()
-    }, 3000)
-  }
-
-  if (counterVal === 0) counterVal = 9
-
-  counterVal--
-  sliderTrack.children[counterVal].scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
-  counter.innerText = counterVal + 1
-})
-window.addEventListener('load', () => {
-  if (!isFullyInViewport(sliderTrack)) {
-    clearInterval(t)
-  }
-});
-window.addEventListener('scroll', () => {
-  if (!isFullyInViewport(sliderTrack)) {
-    clearInterval(t)
-    console.log(t)
-  } else {
-    // TODO:
-  }
-});
-
-
-// function isInViewport(elem) {
-//   const bounding = elem.getBoundingClientRect()
-//   console.log(bounding)
-
-//   return bounding.bottom >= 0 && bounding.top <= window.innerHeight
-// }
-function isFullyInViewport(elem) {
-  const bounding = elem.getBoundingClientRect()
-
-  return bounding.top >= 0
+  setTimeout(() => {
+    for (const b of buttonsContainer.children) {
+      b.disabled = false
+    }
+  }, 600)
 }
