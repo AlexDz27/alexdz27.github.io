@@ -16,11 +16,8 @@ html {
   /* text, 18.2px */
   font-size: calc(0.56760665972944844rem + 0.7804370447450573vw);
   /* menu */
-  /* TODO: r */
-  /* font-size: calc(0.63760665972944844rem + 0.7804370447450573vw); */
   font-family: Arial, Helvetica, sans-serif;
   font-optical-sizing: auto;
-
   scroll-behavior: smooth;
 }
 
@@ -76,7 +73,6 @@ nav a:hover {
 main {
   /* TODO: ? ; del bg-more, but first WEBP */
   background-color: #f3f0f0;
-  /* TODO: just 'bg' */
   background-image: url("../img/bg.jpg");
   background-size: cover;
   height: 100vh;
@@ -147,8 +143,6 @@ main h1 {
   top: -0.3rem;
   border-radius: 1rem;
   width: 315px;
-  /* TODO: r) */
-  /* padding-top: .4rem; */
   text-align: center;
   letter-spacing: 0.05rem;
   overflow-x: hidden;
@@ -161,11 +155,10 @@ main h1 {
 .buttons-container {
   position: absolute;
   right: .8rem;
-  bottom: .8rem; /* TODO: calc(.8rem - size/2) */
+  bottom: .8rem;
   z-index: 3;
 }
 .slider-button {
-  /* position: absolute; */
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
@@ -190,8 +183,7 @@ main h1 {
 .slider-track {
   width: 100%;
   display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  transition: transform .5s ease-in-out;
 }
 .slide {
   width: 100%;
@@ -235,7 +227,6 @@ main h1 {
   position: relative;
   z-index: 2;
 }
-/* TODO: rename div */
 .slider div .slide:last-child {
   margin-right: 0;
 }
@@ -292,8 +283,6 @@ main h1 {
 .goods-item ul {
   padding: 2rem;
   border-radius: 1rem;
-  /* TODO: del) */
-  /* background-color: #d4f1c5; */
   background-color: #f9f9f9;
   font-size: 1.3rem;
   padding-left: 4rem;

@@ -1,13 +1,31 @@
-// LINKS TODO
+// LINKS
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    targetElement.scrollIntoView({behavior: 'smooth'})
+  }
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      targetElement.scrollIntoView({behavior: 'smooth'})
+      history.replaceState(null, null, '#' + targetId);
+    })
+  })
+})
 
 // SLIDER
 const sliderTrack = document.querySelector('#sliderTrack')
 const buttonsContainer = document.querySelector('#buttonsContainer')
-let prevIndex = 0
+let prevIndex = 0 // this probably does nothing
 let index = 0
 
 let t = setInterval(() => {
-  if (document.visibilityState === 'hidden') return
   prevIndex = index
   index++
   if (index === sliderTrack.childElementCount) index = 0
@@ -18,7 +36,6 @@ for (const button of buttonsContainer.children) {
     if (e.isTrusted) {
       clearInterval(t)
       t = setInterval(() => {
-        if (document.visibilityState === 'hidden') return
         prevIndex = index
         index++
         if (index === sliderTrack.childElementCount) index = 0
@@ -40,7 +57,7 @@ function slide() {
 
   document.querySelector('.button--active').classList.remove('button--active')
   buttonsContainer.children[index].classList.add('button--active')
-  sliderTrack.scrollLeft += 315 * (index - prevIndex)
+  sliderTrack.style.transform = `translateX(-${315 * index}px)`
 
   setTimeout(() => {
     for (const b of buttonsContainer.children) {
